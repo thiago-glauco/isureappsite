@@ -1,0 +1,38 @@
+<div fxLayout="row" fxLayout.lt-sm="column" fxLayoutGap="1%" fxLayoutAlign="center center">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title-group>
+        <mat-card-title color="">
+          <span>Olá. Você está na {{CompanyName}}.</span>
+        </mat-card-title>
+        <mat-card-subtitle>
+          <span>Você deve efetuar o login ou se cadastrar</span>
+        </mat-card-subtitle>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content>
+      <div fxLayout="row" fxLayoutGap="5px">
+        <img src="https://media.istockphoto.com/photos/medical-technology-concept-electronic-medical-record-picture-id872676342" mat-card-lg-image>
+        <div fxLayout="column" >
+        <mat-form-field>
+            <input matInput type="email" placeholder="Email" [(ngModel)]="user.email">
+            <mat-icon matPrefix >mail_outline</mat-icon>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Senha" type="password" [(ngModel)]="user.password">
+            <mat-icon matPrefix >lock</mat-icon>
+            <mat-icon matSuffix >visibility_off</mat-icon>
+          </mat-form-field>
+        </div>
+        </div>
+        {{(user | json)}}
+    </mat-card-content>
+      <mat-card-actions fxLayout="row wrap" fxLayout.lt-sm="column" fxFlexWrap fxLayoutAlign="space-between space-around" fxLayoutGap="5px">
+          <button fxFlex mat-raised-button color="primary" (click)="login()"><mat-icon>home_outline</mat-icon> Login</button>
+
+          <button fxFlex mat-raised-button color="primary" (click)="alert('Hello')">Sobre Nós</button>
+          <button fxFlex mat-raised-button color="primary" (click)="alert('Hello')">Registre-se</button>
+          <button fxFlex mat-raised-button color="primary" (click)="alert('Hello')">Contato</button>
+      </mat-card-actions>
+  </mat-card>
+</div>
